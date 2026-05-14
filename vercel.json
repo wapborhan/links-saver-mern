@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "ihadith",
+  "name": "links-saver",
   "builds": [
     {
       "src": "./index.js",
@@ -14,6 +14,6 @@
     }
   ],
   "git": {
-    "deploymentEnabled": true
+    "deploymentEnabled": false
   }
 }

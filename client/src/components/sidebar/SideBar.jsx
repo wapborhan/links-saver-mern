@@ -7,7 +7,7 @@ const SideBar = ({
   isCategoriesLoading,
 }) => {
   return (
-    <aside className="fixed left-[2%] top-5 bottom-5 w-[20%] 2xl:w-[18%] aside1">
+    <aside className="fixed left-[2%] top-5 bottom-5 w-[20%] 2xl:w-[18%] aside1 hidden lg:block">
       <div className="h-[10%] px-5 bg-[#ffffff10]  rounded-t-[20px]">
         <div className="h-full flex justify-between items-center text-white">
           <div className="flex justify-start items-center gap-1 md:gap-3">

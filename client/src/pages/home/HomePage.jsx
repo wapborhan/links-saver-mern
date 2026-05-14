@@ -26,7 +26,7 @@ const HomePage = () => {
         isCategoriesLoading={isCategoriesLoading}
       />
 
-      <aside className="fixed left-[24%] 2xl:left-[22%] top-5 bottom-5 w-[74%] 2xl:w-[77%]  aside2">
+      <aside className="hidden lg:block h-full  fixed left-[24%] 2xl:left-[22%] top-5 bottom-5 w-[74%] 2xl:w-[77%]  aside2">
         <section className="h-full w-full rounded-[24px]">
           <HeadNav
             selectedCategories={selectedCategories}

@@ -1,10 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
+  getRedirectResult,
   GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -40,6 +42,20 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, [user?.email]);
+
+  useEffect(() => {
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result) {
+          const user = result.user;
+          console.log("Redirect login successful:", user);
+          // You can set user in your state/context here if needed
+        }
+      })
+      .catch((error) => {
+        console.error("Redirect login error:", error);
+      });
+  }, []);
 
   const updateUser = (updatename, photo) => {
     return updateProfile(auth.currentUser, {

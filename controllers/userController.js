@@ -4,14 +4,26 @@ exports.createUser = async (req, res, next) => {
   const userData = req.body;
   try {
     const postData = new Users(userData);
-    const result = await postData.save();
 
-    res.status(200).json({
-      success: true,
-      status: 200,
-      message: "Users Found",
-      data: result,
-    });
+    const existingUser = await Users.findOne({ email: userData.email });
+
+    if (!existingUser) {
+      const result = await postData.save();
+
+      res.status(200).json({
+        success: true,
+        status: 200,
+        message: "User Created Successfully.",
+        data: result,
+      });
+    } else {
+      res.status(200).json({
+        success: true,
+        status: 200,
+        message: "User ALready Registared.",
+        data: [],
+      });
+    }
   } catch (error) {
     res.status(500).json({
       success: false,

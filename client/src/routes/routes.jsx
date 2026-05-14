@@ -5,7 +5,6 @@ import About from "../pages/about/About";
 import NotFound from "../layout/NotFound/NotFound";
 import Dash from "../layout/Dash";
 import SIgnIn from "../layout/SIgnIn";
-import SIgnUp from "../layout/SIgnUp";
 import Categories from "../pages/dashboard/categories/Categories";
 import Website from "../pages/dashboard/websites/Website";
 import Users from "../pages/dashboard/users/Users";
@@ -27,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: <SIgnIn />,
-      },
-      {
-        path: "/signup",
-        element: <SIgnUp />,
       },
     ],
   },

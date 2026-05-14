@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Icon from "../../../components/shared/Icon";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -82,9 +83,7 @@ const Users = () => {
                           </td>
 
                           <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                            <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 uppercase">
-                              {cat?.name}
-                            </span>
+                            <span>{cat?.name}</span>
                           </td>
                           <td className="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                             <span className="text-white">{cat?.email}</span>
@@ -99,13 +98,13 @@ const Users = () => {
                           </td>
                           <td className="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                             <button className="bg-green-600 px-3 py-1 text-white rounded-s-md">
-                              Edit
+                              <Icon iconName="FaPencilAlt" />
                             </button>
                             <button className="bg-cyan-600 px-3 py-1 text-whitblack">
-                              View
+                              <Icon iconName="FaEye" />
                             </button>
                             <button className="bg-red-500 px-3 py-1 text-white rounded-e-md">
-                              Delete
+                              <Icon iconName="FaTrashAlt " />
                             </button>
                           </td>
                         </tr>
